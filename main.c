@@ -79,7 +79,6 @@ void write_quarter(int **grid, int width, int direction)
       grid[--x][y] = current_counter++;
     }
   }
-  
 }
 
 int main(int argc, char *argv[])
