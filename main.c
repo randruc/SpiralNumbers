@@ -99,7 +99,7 @@ int main(int argc, char *argv[])
   }
   
   print_grid(grid, initial_width);
-  free_grid(grid, initial_width) ;                  
+  free_grid(grid, initial_width);                  
 
   return EXIT_SUCCESS;
 }
