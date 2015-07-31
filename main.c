@@ -1,3 +1,8 @@
+/*
+ * Author : Remi Andruccioli
+ * This program is in the public domain.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 
