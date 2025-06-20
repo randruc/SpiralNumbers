@@ -5,6 +5,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
+
+void usage(const char *progname)
+{
+  fprintf(stderr, "Usage: %s <size>\n", progname);
+}
 
 #define RightAndDown 0
 #define LeftAndUp ~ RightAndDown
@@ -88,9 +94,21 @@ void write_quarter(int **grid, int width, int direction)
 
 int main(int argc, char *argv[])
 {
-  int **grid; 
+  int **grid;
 
-  int initial_width = atoi(argv[1]);
+  if(argc != 2) {
+    usage(argv[0]);
+    return EXIT_FAILURE;
+  }
+
+  char *end = NULL;
+  long size_value = strtol(argv[1], &end, 10);
+  if(*end != '\0' || size_value <= 0 || size_value > INT_MAX) {
+    fprintf(stderr, "Invalid size '%s'\n", argv[1]);
+    return EXIT_FAILURE;
+  }
+
+  int initial_width = (int)size_value;
   int width = initial_width;
   int direction = RightAndDown;    
 
