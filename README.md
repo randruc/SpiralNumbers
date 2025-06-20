@@ -1,1 +1,1 @@
-This is an example of spiral numbers alogrithm in C.
+This is an example of the spiral numbers algorithm in C.
